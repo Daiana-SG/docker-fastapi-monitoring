@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web-api:
+    build: .
+    ports:
+      - "8080:8000"
+    environment:
+      - REDIS_HOST=cache-db  # Nombre del servicio abajo (DNS Interno)
+    networks:
+      - backend-net
+    depends_on:
+      - cache-db
+
+  cache-db:
+    image: redis:7-alpine
+    container_name: database_container
+    networks:
+      - backend-net
+    volumes:
+      - redis_data:/data
+
+networks:
+  backend-net:
+    driver: bridge
+
+volumes:
+  redis_data:
