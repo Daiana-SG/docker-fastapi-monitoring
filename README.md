@@ -33,3 +33,7 @@ Levanta el entorno:
 docker-compose up -d
 
 Accede a la documentación automática (Swagger) en: http://localhost:8080/docs
+
+bajar el entorno: 
+
+docker-compose down
