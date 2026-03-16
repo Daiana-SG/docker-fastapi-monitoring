@@ -12,3 +12,9 @@ Orquestar microservicios con Docker Compose (API + Redis).
 Implementar redes aisladas y comunicación por DNS interno.
 Garantizar la persistencia de datos mediante volúmenes.
 Aplicar seguridad básica usando usuarios no-root y .dockerignore. 
+
+Mas notas importantes: 
+Aislamiento de Red: "He configurado una red tipo bridge llamada backend-net. La base de datos no expone puertos a mi computadora, solo es visible para la API, lo que aumenta la seguridad."
+DNS Interno: "La API se conecta a Redis usando el nombre del servicio cache-db, demostrando el uso del DNS interno de Docker en lugar de IPs estáticas."
+Persistencia: "He implementado un volumen para Redis. Si el contenedor se detiene o se borra, los datos de temperatura persisten."
+Optimización de Imagen: "Utilicé una imagen base slim y un usuario no-root para seguir principios de seguridad y ligereza."
