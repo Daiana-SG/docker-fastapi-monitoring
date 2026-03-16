@@ -1,0 +1,14 @@
+Anotaciones importantes a la hora de diseñar este mini-proyecto:
+Se hizo incapie en la Seguridad, Consistencia y Velocidad del build.
+
+Seguridad: Evitas subir archivos sensibles como .env con contraseñas o claves SSH que podrías tener en tu carpeta local.
+Consistencia: Aseguras que las librerías se instalen dentro del contenedor (vía el pip install del Dockerfile) y no que se copien las que tiConsistencia: Aseguras que las librerías se instalen dentro del contenedor (vía el pip install del Dockerfile) y no que se copien las que tienes en tu Windows/Mac, que podrían no ser compatibles con el Linux del contenedor.
+Velocidad de Build: Docker no tiene que "enviar" gigabytes de carpetas como venv al motor de Docker antes de empezar el build (el famoso "Sending build context to Docker daemon").
+
+Checklist Completado:
+Dockerizar aplicaciones (FastAPI) con imágenes optimizadas (slim).
+Gestionar dependencias de forma eficiente aprovechando el caché de capas.
+Orquestar microservicios con Docker Compose (API + Redis).
+Implementar redes aisladas y comunicación por DNS interno.
+Garantizar la persistencia de datos mediante volúmenes.
+Aplicar seguridad básica usando usuarios no-root y .dockerignore. 
